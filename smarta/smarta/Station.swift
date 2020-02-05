@@ -18,7 +18,7 @@ struct Station: Codable {
 struct Schedule: Codable {
     let trainID: String
     let nextStation: String
-    let destination: Destination
+//    let destination: Destination?
     let nextArrival: String
     let waitingSeconds: String
     let waitingTime: String
@@ -27,7 +27,7 @@ struct Schedule: Codable {
     enum CodingKeys: String, CodingKey {
         case trainID = "train-id"
         case nextStation = "next-station"
-        case destination
+//        case destination
         case nextArrival = "next-arrival"
         case waitingSeconds = "waiting-seconds"
         case waitingTime = "waiting-time"
@@ -35,10 +35,10 @@ struct Schedule: Codable {
     }
 }
 
-enum Destination: String, Codable {
-    case airportStation = "Airport Station"
-    case northSpringsStation = "North Springs Station"
-}
+//enum Destination: String, Codable {
+//    case airportStation = "Airport Station"
+//    case northSpringsStation = "North Springs Station"
+//}
 
 // MARK: - StationClass
 struct StationClass: Codable {
