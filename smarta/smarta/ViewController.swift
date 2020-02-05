@@ -14,7 +14,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkController.fetchStationLines()
+        networkController.fetchStationLines { (_) in
+            
+        }
     }
 
 

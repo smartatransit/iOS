@@ -12,28 +12,29 @@ let baseURL = URL(string: "https://staging.api.smartatransit.com/api/live/schedu
 
 class NetworkController {
     
-    func fetchStationLines() {
+    var station: Station?
+    
+    func fetchStationLines(_ completion: @escaping (Station?) -> ()) {
         
         debugPrint("Fetching station lines.")
         
-        URLSession.shared.dataTask(with: baseURL)
+        let lineURL = baseURL.appendingPathComponent("red")
+        var request = URLRequest(url: lineURL)
         
-        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                print("Error receiving animal name data: \(error)")
+                completion(nil)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil)
+                return
+            }
+            self.station =  try! JSONDecoder().decode(Station.self, from: data)
+            print(self.station)
+            completion(nil)
+        }.resume()
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
