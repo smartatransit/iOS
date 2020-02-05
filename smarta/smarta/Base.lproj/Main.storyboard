@@ -28,7 +28,7 @@
         <!--View Controller-->
         <scene sceneID="N8U-c2-hMy">
             <objects>
-                <viewController id="ziF-RV-FMo" sceneMemberID="viewController">
+                <viewController id="ziF-RV-FMo" customClass="ViewController" customModule="smarta" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="flJ-W0-zJ2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

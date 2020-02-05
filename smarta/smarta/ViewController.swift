@@ -9,12 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let networkController = NetworkController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        networkController.fetchStationLines()
     }
 
 
 }
 
+
+
+//extension UIViewController: UITableViewDelegate & UITableViewDataSource {
+//    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//
+//    }
+//
+//    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        
+//    }
+//}

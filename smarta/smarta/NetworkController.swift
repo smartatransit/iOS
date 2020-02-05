@@ -8,9 +8,18 @@
 
 import Foundation
 
+let baseURL = URL(string: "https://staging.api.smartatransit.com/api/live/schedule/line/")!
+
 class NetworkController {
     
-    
+    func fetchStationLines() {
+        
+        debugPrint("Fetching station lines.")
+        
+        URLSession.shared.dataTask(with: baseURL)
+        
+        
+    }
     
     
     
