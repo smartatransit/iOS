@@ -18,12 +18,12 @@ class NetworkController {
         
         debugPrint("Fetching station lines.")
         
-        let lineURL = baseURL.appendingPathComponent("Red")
+        let lineURL = baseURL.appendingPathComponent("Gold")
         let request = URLRequest(url: lineURL)
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
-                print("Error receiving animal name data: \(error)")
+                print("Error \(error)")
                 completion(nil)
                 return
             }
@@ -32,6 +32,7 @@ class NetworkController {
                 completion(nil)
                 return
             }
+            // This is gross and unsafe, wrap this in a do-try-catch block below.
             self.station =  try! JSONDecoder().decode(Stations.self, from: data)
             print(self.station)
             completion(nil)
