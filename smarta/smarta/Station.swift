@@ -60,3 +60,6 @@ enum Line: String, Codable {
     case green = "Green"
     case gold = "Gold"
 }
+
+typealias Stations = [Station]
+
