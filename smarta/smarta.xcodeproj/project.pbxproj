@@ -14,6 +14,7 @@
 		9586CE6523E511CB00DADD82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9586CE6423E511CB00DADD82 /* Assets.xcassets */; };
 		9586CE6823E511CB00DADD82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9586CE6623E511CB00DADD82 /* LaunchScreen.storyboard */; };
 		9586CE9023EA4CB300DADD82 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586CE8F23EA4CB300DADD82 /* NetworkController.swift */; };
+		9586CE9223EA4F4900DADD82 /* StationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586CE9123EA4F4900DADD82 /* StationsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9586CE6723E511CB00DADD82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9586CE6923E511CB00DADD82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9586CE8F23EA4CB300DADD82 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		9586CE9123EA4F4900DADD82 /* StationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				9586CE5D23E511C900DADD82 /* SceneDelegate.swift */,
 				9586CE5F23E511C900DADD82 /* ViewController.swift */,
 				9586CE6123E511C900DADD82 /* Main.storyboard */,
+				9586CE9123EA4F4900DADD82 /* StationsTableViewController.swift */,
 				9586CE6423E511CB00DADD82 /* Assets.xcassets */,
 				9586CE6623E511CB00DADD82 /* LaunchScreen.storyboard */,
 				9586CE6923E511CB00DADD82 /* Info.plist */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9586CE9023EA4CB300DADD82 /* NetworkController.swift in Sources */,
+				9586CE9223EA4F4900DADD82 /* StationsTableViewController.swift in Sources */,
 				9586CE6023E511C900DADD82 /* ViewController.swift in Sources */,
 				9586CE5C23E511C900DADD82 /* AppDelegate.swift in Sources */,
 				9586CE5E23E511C900DADD82 /* SceneDelegate.swift in Sources */,

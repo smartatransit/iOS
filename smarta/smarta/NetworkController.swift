@@ -7,3 +7,24 @@
 //
 
 import Foundation
+
+class NetworkController {
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
