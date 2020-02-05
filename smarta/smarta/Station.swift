@@ -16,9 +16,13 @@ struct Station: Codable {
 
 // MARK: - Schedule
 struct Schedule: Codable {
-    let trainID, nextStation: String
+    let trainID: String
+    let nextStation: String
     let destination: Destination
-    let nextArrival, waitingSeconds, waitingTime, eventTime: String
+    let nextArrival: String
+    let waitingSeconds: String
+    let waitingTime: String
+    let eventTime: String
 
     enum CodingKeys: String, CodingKey {
         case trainID = "train-id"
@@ -45,11 +49,14 @@ struct StationClass: Codable {
 
 enum Direction: String, Codable {
     case north = "N"
-    case south = "S"
     case east = "E"
+    case south = "S"
     case west = "W"
 }
 
 enum Line: String, Codable {
     case red = "Red"
+    case blue = "Blue"
+    case green = "Green"
+    case gold = "Gold"
 }
