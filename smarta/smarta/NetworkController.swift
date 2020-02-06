@@ -14,11 +14,11 @@ class NetworkController {
     
     var station: [Station]?
     
-    func fetchStationLines(_ completion: @escaping ([Station]?) -> ()) {
+    func fetchStationLines(with line: String, completion: @escaping ([Station]?) -> ()) {
         
         debugPrint("Fetching station lines.")
         
-        let lineURL = baseURL.appendingPathComponent("Gold")
+        let lineURL = baseURL.appendingPathComponent(line)
         let request = URLRequest(url: lineURL)
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
