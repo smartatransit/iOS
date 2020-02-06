@@ -47,6 +47,9 @@
                                     <segment title="Green"/>
                                     <segment title="Gold"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedSelected:" destination="ziF-RV-FMo" eventType="valueChanged" id="e9l-EP-IhX"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PFs-rH-ebZ">
                                 <rect key="frame" x="10" y="189" width="397" height="673"/>
@@ -69,6 +72,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="M8u-9u-ZDM"/>
                     <connections>
+                        <outlet property="lineSegmentedControl" destination="99z-QF-5SV" id="VLt-pK-iDV"/>
                         <outlet property="tableView" destination="PFs-rH-ebZ" id="Gg7-5O-oja"/>
                     </connections>
                 </viewController>

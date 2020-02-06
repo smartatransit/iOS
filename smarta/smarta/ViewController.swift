@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var lineSegmentedControl: UISegmentedControl!
+    
     let networkController = NetworkController()
 
     override func viewDidLoad() {
@@ -21,6 +23,36 @@ class ViewController: UIViewController {
         }
     }
 
+    
+    @IBAction func segmentedSelected(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+            case 0:
+                networkController.fetchStationLines(with: "Red") { (_) in
+                    
+            }
+            
+            case 1:
+                networkController.fetchStationLines(with: "Blue") { (_) in
+                                   
+                           }
+        case 2:
+            networkController.fetchStationLines(with: "Green") { (_) in
+                               
+                       }
+        case 3:
+            networkController.fetchStationLines(with: "Gold") { (_) in
+                               
+                       }
+        default:
+            networkController.fetchStationLines(with: "") { (_) in
+                               
+                       }
+        }
+        if sender.selectedSegmentIndex == 0 {
+            
+        }
+    }
+    
 
 }
 

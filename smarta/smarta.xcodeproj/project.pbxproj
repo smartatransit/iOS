@@ -9,25 +9,25 @@
 /* Begin PBXBuildFile section */
 		9586CE5C23E511C900DADD82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586CE5B23E511C900DADD82 /* AppDelegate.swift */; };
 		9586CE5E23E511C900DADD82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586CE5D23E511C900DADD82 /* SceneDelegate.swift */; };
-		9586CE6023E511C900DADD82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586CE5F23E511C900DADD82 /* ViewController.swift */; };
 		9586CE6323E511C900DADD82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9586CE6123E511C900DADD82 /* Main.storyboard */; };
 		9586CE6523E511CB00DADD82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9586CE6423E511CB00DADD82 /* Assets.xcassets */; };
 		9586CE6823E511CB00DADD82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9586CE6623E511CB00DADD82 /* LaunchScreen.storyboard */; };
 		9586CE9023EA4CB300DADD82 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586CE8F23EA4CB300DADD82 /* NetworkController.swift */; };
 		9586CE9423EA54E200DADD82 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586CE9323EA54E200DADD82 /* Station.swift */; };
+		95E7BCA523EBACFF009451D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7BCA423EBACFF009451D5 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9586CE5823E511C900DADD82 /* smarta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smarta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9586CE5B23E511C900DADD82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9586CE5D23E511C900DADD82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9586CE5F23E511C900DADD82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9586CE6223E511C900DADD82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9586CE6423E511CB00DADD82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9586CE6723E511CB00DADD82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9586CE6923E511CB00DADD82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9586CE8F23EA4CB300DADD82 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		9586CE9323EA54E200DADD82 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		95E7BCA423EBACFF009451D5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 				9586CE5B23E511C900DADD82 /* AppDelegate.swift */,
 				9586CE8F23EA4CB300DADD82 /* NetworkController.swift */,
 				9586CE5D23E511C900DADD82 /* SceneDelegate.swift */,
-				9586CE5F23E511C900DADD82 /* ViewController.swift */,
+				95E7BCA423EBACFF009451D5 /* ViewController.swift */,
 				9586CE6123E511C900DADD82 /* Main.storyboard */,
 				9586CE9323EA54E200DADD82 /* Station.swift */,
 				9586CE6423E511CB00DADD82 /* Assets.xcassets */,
@@ -144,8 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95E7BCA523EBACFF009451D5 /* ViewController.swift in Sources */,
 				9586CE9023EA4CB300DADD82 /* NetworkController.swift in Sources */,
-				9586CE6023E511C900DADD82 /* ViewController.swift in Sources */,
 				9586CE5C23E511C900DADD82 /* AppDelegate.swift in Sources */,
 				9586CE9423EA54E200DADD82 /* Station.swift in Sources */,
 				9586CE5E23E511C900DADD82 /* SceneDelegate.swift in Sources */,
