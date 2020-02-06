@@ -18,7 +18,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkController.fetchStationLines(with: "Red") { (_) in
+        networkController.fetchStationLines(with: Line.red.rawValue) { (_) in
             
         }
     }
@@ -26,34 +26,29 @@ class ViewController: UIViewController {
     
     @IBAction func segmentedSelected(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
-            case 0:
-                networkController.fetchStationLines(with: "Red") { (_) in
-                    
+        case 0:
+            networkController.fetchStationLines(with: Line.red.rawValue) { (_) in
+                
             }
             
-            case 1:
-                networkController.fetchStationLines(with: "Blue") { (_) in
-                                   
-                           }
+        case 1:
+            networkController.fetchStationLines(with: Line.blue.rawValue) { (_) in
+                
+            }
         case 2:
-            networkController.fetchStationLines(with: "Green") { (_) in
-                               
-                       }
+            networkController.fetchStationLines(with: Line.green.rawValue) { (_) in
+                
+            }
         case 3:
-            networkController.fetchStationLines(with: "Gold") { (_) in
-                               
-                       }
+            networkController.fetchStationLines(with: Line.gold.rawValue) { (_) in
+                
+            }
         default:
             networkController.fetchStationLines(with: "") { (_) in
-                               
-                       }
-        }
-        if sender.selectedSegmentIndex == 0 {
-            
+                
+            }
         }
     }
-    
-
 }
 
 
