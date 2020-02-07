@@ -15,13 +15,13 @@ class TestTableViewController: UITableViewController {
     var stations: [Station]  = []
     private let tableViewRefreshControl = UIRefreshControl()
     var loadingIndicator = UIActivityIndicatorView(style: .medium)
-    @IBOutlet weak var sementedControl: UISegmentedControl!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.addSubview(tableViewRefreshControl)
-        tableViewRefreshControl.addTarget(self, action: <#T##Selector#>, for: .valueChanged)
+//        tableViewRefreshControl.addTarget(self, action: <#T##Selector#>, for: .valueChanged)
         loadingIndicator.center = view.center
         
         networkController.fetchStationLines(with: Line.red.rawValue) { result in
@@ -63,6 +63,12 @@ class TestTableViewController: UITableViewController {
         //
         // Configure the cell...
 
+//        if segmentedControl.selectedSegmentIndex == 0 {
+//            cell.containerView.backgroundColor = .red
+//        } else {
+//            cell.containerView.backgroundColor = .cyan
+//        }
+        
         return cell
     }
    

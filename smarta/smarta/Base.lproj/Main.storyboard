@@ -135,7 +135,7 @@
                     <navigationItem key="navigationItem" title="smarta" id="WvZ-ug-oyo"/>
                     <connections>
                         <outlet property="searchBar" destination="VC6-nN-reF" id="cFV-mT-rJS"/>
-                        <outlet property="sementedControl" destination="DG9-lf-1bz" id="KSX-eO-mGW"/>
+                        <outlet property="segmentedControl" destination="DG9-lf-1bz" id="KSX-eO-mGW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jv9-4b-Nz3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
