@@ -13,13 +13,15 @@ class TestTableViewController: UITableViewController {
     let networkController = NetworkController()
     
     var stations: [Station]  = []
-    var loadingIndicator = UIActivityIndicatorView()
+    private let tableViewRefreshControl = UIRefreshControl()
+    var loadingIndicator = UIActivityIndicatorView(style: .medium)
     @IBOutlet weak var sementedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.addSubview(tableViewRefreshControl)
+        tableViewRefreshControl.addTarget(self, action: <#T##Selector#>, for: .valueChanged)
         loadingIndicator.center = view.center
         
         networkController.fetchStationLines(with: Line.red.rawValue) { result in
@@ -47,7 +49,6 @@ class TestTableViewController: UITableViewController {
 //    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         stations.count
     }
 
@@ -56,8 +57,8 @@ class TestTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StationTableViewCell.reuseIdentifier, for: indexPath) as? StationTableViewCell else { return UITableViewCell() }
         let station = stations[indexPath.row]
         cell.stationNameLabel.text = station.station.name
-        cell.arrivalTimeLabel.text = station.schedule.nextArrival
-        cell.directionLabel.text = station.station.direction.rawValue
+        cell.arrivalTimeLabel.text = "Arrival time \(station.schedule.nextArrival)"
+        cell.directionLabel.text = "Direction: \(station.station.direction.rawValue)"
         cell.containerView.layer.cornerRadius = 12
         //
         // Configure the cell...
@@ -101,6 +102,9 @@ class TestTableViewController: UITableViewController {
         }
     }
     
+    @objc private func refreshStationLines() {
+       
+    }
 
     /*
     // Override to support conditional editing of the table view.
