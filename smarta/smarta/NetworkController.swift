@@ -12,9 +12,9 @@ let baseURL = URL(string: "https://staging.api.smartatransit.com/api/live/schedu
 
 class NetworkController {
     
-    var station: [Station]?
+    var station: [Station]
     
-    func fetchStationLines(with line: String, completion: @escaping ([Station]?) -> ()) {
+    func fetchStationLines(with line: String, completion: @escaping (Result<[Station], Error>) -> Void) {
         
         debugPrint("Fetching station lines.")
         
@@ -23,19 +23,22 @@ class NetworkController {
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
-                print("Error \(error)")
-                completion(nil)
+                completion(.failure(error))
                 return
             }
             
             guard let data = data else {
-                completion(nil)
+                completion(.failure(error!))
                 return
             }
-            // This is gross and unsafe, wrap this in a do-try-catch block below.
-            self.station =  try! JSONDecoder().decode(Stations.self, from: data)
-            print(self.station)
-            completion(nil)
+
+            do {
+                self.station =  try JSONDecoder().decode(Stations.self, from: data)
+                completion(.success(self.station))
+            } catch {
+                completion(.failure(error))
+                return
+            }
         }.resume()
     }
 }

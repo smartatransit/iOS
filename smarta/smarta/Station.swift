@@ -10,6 +10,7 @@ import Foundation
 
 // MARK: - Station
 struct Station: Codable {
+    
     let station: StationClass
     let schedule: Schedule
 }
