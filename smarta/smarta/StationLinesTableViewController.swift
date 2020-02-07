@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TestTableViewController: UITableViewController {
+class StationLinesTableViewController: UITableViewController {
     
     let networkController = NetworkController()
     
@@ -57,7 +57,7 @@ class TestTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StationTableViewCell.reuseIdentifier, for: indexPath) as? StationTableViewCell else { return UITableViewCell() }
         let station = stations[indexPath.row]
         cell.stationNameLabel.text = station.station.name
-        cell.arrivalTimeLabel.text = "Arrival time \(station.schedule.nextArrival)"
+        cell.arrivalTimeLabel.text = "Arrival time: \(station.schedule.nextArrival)"
         cell.directionLabel.text = "Direction: \(station.station.direction.rawValue)"
         cell.containerView.layer.cornerRadius = 12
         //
@@ -156,5 +156,10 @@ class TestTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell = stations[indexPath.row]
+//        
+//    }
 
 }
