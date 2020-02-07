@@ -12,7 +12,7 @@ let baseURL = URL(string: "https://staging.api.smartatransit.com/api/live/schedu
 
 class NetworkController {
     
-    var station: [Station]
+    var station: [Station] = []
     
     func fetchStationLines(with line: String, completion: @escaping (Result<[Station], Error>) -> Void) {
         

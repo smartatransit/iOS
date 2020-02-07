@@ -35,44 +35,42 @@ class StationsViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkController.fetchStationLines(with: Line.red.rawValue) {
-            
-        }
+       
     }
     
     
     @IBAction func segmentedSelected(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            networkController.fetchStationLines(with: Line.red.rawValue) {
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
-            
-        case 1:
-            networkController.fetchStationLines(with: Line.blue.rawValue) {
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
-        case 2:
-            networkController.fetchStationLines(with: Line.green.rawValue) {
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
-        case 3:
-            networkController.fetchStationLines(with: Line.gold.rawValue) {
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
-        default:
-            networkController.fetchStationLines(with: "") { 
-                
-            }
-        }
+//        switch sender.selectedSegmentIndex {
+//        case 0:
+//            networkController.fetchStationLines(with: Line.red.rawValue) {
+//                DispatchQueue.main.async {
+//                    self.tableView.reloadData()
+//                }
+//            }
+//            
+//        case 1:
+//            networkController.fetchStationLines(with: Line.blue.rawValue) {
+//                DispatchQueue.main.async {
+//                    self.tableView.reloadData()
+//                }
+//            }
+//        case 2:
+//            networkController.fetchStationLines(with: Line.green.rawValue) {
+//                DispatchQueue.main.async {
+//                    self.tableView.reloadData()
+//                }
+//            }
+//        case 3:
+//            networkController.fetchStationLines(with: Line.gold.rawValue) {
+//                DispatchQueue.main.async {
+//                    self.tableView.reloadData()
+//                }
+//            }
+//        default:
+//            networkController.fetchStationLines(with: "") { 
+//                
+//            }
+//        }
     }
 }
 

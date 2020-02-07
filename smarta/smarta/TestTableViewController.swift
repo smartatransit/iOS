@@ -12,13 +12,23 @@ class TestTableViewController: UITableViewController {
     
     let networkController = NetworkController()
     
-    var stations: [Station]?  = []
+    var stations: [Station]  = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkController.fetchStationLines(with: Line.red.rawValue) { () in
-        }
         
+        networkController.fetchStationLines(with: Line.red.rawValue) { result in
+            
+            do {
+                let stations = try result.get()
+                DispatchQueue.main.async {
+                    self.stations = stations
+                    self.tableView.reloadData()
+                }
+            } catch {
+                print(error)
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -30,14 +40,14 @@ class TestTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return stations?.count ?? 0
+        stations.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let station = stations?[indexPath.row]
-        cell.textLabel?.text = station?.schedule.trainID
+        let station = stations[indexPath.row]
+        cell.textLabel?.text = station.schedule.trainID
         //
         // Configure the cell...
 
