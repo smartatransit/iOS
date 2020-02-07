@@ -58,6 +58,7 @@ class TestTableViewController: UITableViewController {
         cell.stationNameLabel.text = station.station.name
         cell.arrivalTimeLabel.text = station.schedule.nextArrival
         cell.directionLabel.text = station.station.direction.rawValue
+        cell.containerView.layer.cornerRadius = 12
         //
         // Configure the cell...
 

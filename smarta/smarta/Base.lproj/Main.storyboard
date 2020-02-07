@@ -121,6 +121,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="arrivalTimeLabel" destination="EIf-6X-G2Q" id="4Qj-Bi-oGz"/>
+                                    <outlet property="containerView" destination="cLD-5v-wXZ" id="io1-Un-U4s"/>
                                     <outlet property="directionLabel" destination="TlQ-MB-9lm" id="gcm-i1-4Vx"/>
                                     <outlet property="stationNameLabel" destination="2BO-FI-9Lf" id="Pnj-Pw-rQa"/>
                                 </connections>

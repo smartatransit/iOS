@@ -18,6 +18,7 @@ class StationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var directionLabel: UILabel!
     
+    @IBOutlet weak var containerView: UIView!
     
     
 
