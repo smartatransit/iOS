@@ -23,6 +23,7 @@ class TestTableViewController: UITableViewController {
                 let stations = try result.get()
                 DispatchQueue.main.async {
                     self.stations = stations
+                    print(self.stations)
                     self.tableView.reloadData()
                 }
             } catch {
@@ -47,7 +48,9 @@ class TestTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StationTableViewCell.reuseIdentifier, for: indexPath) as? StationTableViewCell else { return UITableViewCell() }
         let station = stations[indexPath.row]
-        cell.textLabel?.text = station.schedule.trainID
+        cell.stationNameLabel.text = station.station.name
+        cell.arrivalTimeLabel.text = station.schedule.nextArrival
+        cell.directionLabel.text = station.station.direction.rawValue
         //
         // Configure the cell...
 

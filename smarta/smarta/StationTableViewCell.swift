@@ -11,6 +11,12 @@ import UIKit
 class StationTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "cell"
-
+    
+    @IBOutlet weak var stationNameLabel: UILabel!
+    
+    @IBOutlet weak var arrivalTimeLabel: UILabel!
+    
+    @IBOutlet weak var directionLabel: UILabel!
+    
 
 }
