@@ -14,6 +14,9 @@ class TestTableViewController: UITableViewController {
     
     var stations: [Station]  = []
 
+    @IBOutlet weak var sementedControl: UISegmentedControl!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +60,39 @@ class TestTableViewController: UITableViewController {
         return cell
     }
    
+    @IBAction func segmentSelected(_ sender: UISegmentedControl) {
+        
+        let trainLine = sender.selectedSegmentIndex
+        var trainLineString: String
+        
+        switch trainLine {
+        case 0:
+            trainLineString =  Line.red.rawValue
+        case 1:
+            trainLineString = Line.blue.rawValue
+        case 2:
+            trainLineString = Line.green.rawValue
+        case 3:
+            trainLineString = Line.gold.rawValue
+        default:
+            trainLineString = Line.red.rawValue
+        }
+        
+        networkController.fetchStationLines(with: trainLineString) { result in
+            
+            do {
+                let stations = try result.get()
+                DispatchQueue.main.async {
+                    self.stations = stations
+                    print(self.stations)
+                    self.tableView.reloadData()
+                }
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -18,5 +18,7 @@ class StationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var directionLabel: UILabel!
     
+    
+    
 
 }
