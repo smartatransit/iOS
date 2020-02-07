@@ -97,9 +97,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="YRR-UW-Mpl">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YeO-pu-yqr">
+                                    <rect key="frame" x="1" y="1" width="412" height="138"/>
+                                    <subviews>
+                                        <searchBar contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VC6-nN-reF">
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="56"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </searchBar>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DG9-lf-1bz">
+                                            <rect key="frame" x="0.0" y="61" width="412" height="78"/>
+                                            <segments>
+                                                <segment title="Red"/>
+                                                <segment title="Blue"/>
+                                                <segment title="Green"/>
+                                                <segment title="Gold"/>
+                                            </segments>
+                                        </segmentedControl>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="YeO-pu-yqr" secondAttribute="trailing" constant="1" id="5Au-Sj-evE"/>
+                                <constraint firstItem="YeO-pu-yqr" firstAttribute="top" secondItem="YRR-UW-Mpl" secondAttribute="top" constant="1" id="COE-s9-P0H"/>
+                                <constraint firstAttribute="bottom" secondItem="YeO-pu-yqr" secondAttribute="bottom" constant="1" id="swn-P5-pF8"/>
+                                <constraint firstItem="YeO-pu-yqr" firstAttribute="leading" secondItem="YRR-UW-Mpl" secondAttribute="leading" constant="1" id="zVR-1Q-5j8"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="6mi-vr-3vF" style="IBUITableViewCellStyleDefault" id="ZZc-Je-xii">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="168" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZZc-Je-xii" id="kBw-MT-Hud">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -125,7 +156,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jv9-4b-Nz3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2471" y="127"/>
+            <point key="canvasLocation" x="2469.5652173913045" y="126.5625"/>
         </scene>
     </scenes>
 </document>
