@@ -13,21 +13,25 @@ class TestTableViewController: UITableViewController {
     let networkController = NetworkController()
     
     var stations: [Station]  = []
-
+    var loadingIndicator = UIActivityIndicatorView()
     @IBOutlet weak var sementedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadingIndicator.center = view.center
+        
         networkController.fetchStationLines(with: Line.red.rawValue) { result in
             
             do {
                 let stations = try result.get()
                 DispatchQueue.main.async {
+                    self.loadingIndicator.startAnimating()
                     self.stations = stations
                     print(self.stations)
                     self.tableView.reloadData()
+                    self.loadingIndicator.stopAnimating()
                 }
             } catch {
                 print(error)
@@ -83,9 +87,12 @@ class TestTableViewController: UITableViewController {
             do {
                 let stations = try result.get()
                 DispatchQueue.main.async {
+                    self.loadingIndicator.startAnimating()
                     self.stations = stations
                     print(self.stations)
                     self.tableView.reloadData()
+                    self.loadingIndicator.stopAnimating()
+
                 }
             } catch {
                 print(error)
