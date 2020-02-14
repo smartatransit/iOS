@@ -112,7 +112,7 @@ class StationLinesTableViewController: UITableViewController, UISearchBarDelegat
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.count == 0 {
+        if searchText.isEmpty {
             displayedStations = stations
         } else {
             displayedStations = stations.filter({ (station) -> Bool in
@@ -121,8 +121,9 @@ class StationLinesTableViewController: UITableViewController, UISearchBarDelegat
                 return range.location != NSNotFound
             })
         }
-
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     @objc private func refreshStationLines() {
