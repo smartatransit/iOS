@@ -8,11 +8,12 @@
 
 import UIKit
 
-class StationLinesTableViewController: UITableViewController {
+class StationLinesTableViewController: UITableViewController, UISearchBarDelegate {
     
     let networkController = NetworkController()
     
     var stations: [Station]  = []
+    var displayedStations: [Station]  = []
     private let tableViewRefreshControl = UIRefreshControl()
     var loadingIndicator = UIActivityIndicatorView(style: .medium)
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -23,7 +24,7 @@ class StationLinesTableViewController: UITableViewController {
         tableView.addSubview(tableViewRefreshControl)
 //        tableViewRefreshControl.addTarget(self, action: <#T##Selector#>, for: .valueChanged)
         loadingIndicator.center = view.center
-        
+        searchBar.delegate = self
         networkController.fetchStationLines(with: Line.red.rawValue) { result in
             
             do {
@@ -31,6 +32,7 @@ class StationLinesTableViewController: UITableViewController {
                 DispatchQueue.main.async {
                     self.loadingIndicator.startAnimating()
                     self.stations = stations
+                    self.displayedStations = stations
                     print(self.stations)
                     self.tableView.reloadData()
                     self.loadingIndicator.stopAnimating()
@@ -49,13 +51,13 @@ class StationLinesTableViewController: UITableViewController {
 //    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        stations.count
+        displayedStations.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StationTableViewCell.reuseIdentifier, for: indexPath) as? StationTableViewCell else { return UITableViewCell() }
-        let station = stations[indexPath.row]
+        let station = displayedStations[indexPath.row]
         cell.stationNameLabel.text = station.station.name
         cell.arrivalTimeLabel.text = "Arrival time: \(station.schedule.nextArrival)"
         cell.directionLabel.text = "Direction: \(station.station.direction.rawValue)"
@@ -97,6 +99,7 @@ class StationLinesTableViewController: UITableViewController {
                 DispatchQueue.main.async {
                     self.loadingIndicator.startAnimating()
                     self.stations = stations
+                    self.displayedStations = stations
                     print(self.stations)
                     self.tableView.reloadData()
                     self.loadingIndicator.stopAnimating()
@@ -106,6 +109,20 @@ class StationLinesTableViewController: UITableViewController {
                 print(error)
             }
         }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count == 0 {
+            displayedStations = stations
+        } else {
+            displayedStations = stations.filter({ (station) -> Bool in
+                let tmp: NSString = station.station.name as NSString
+                let range = tmp.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
+                return range.location != NSNotFound
+            })
+        }
+
+        self.tableView.reloadData()
     }
     
     @objc private func refreshStationLines() {
