@@ -295,7 +295,6 @@
 		9586CE6D23E511CB00DADD82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VL892F87QQ;
 				INFOPLIST_FILE = smarta/Info.plist;
@@ -303,7 +302,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = glaslabs.smarta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.glaslabs.Smarta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -313,7 +312,6 @@
 		9586CE6E23E511CB00DADD82 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VL892F87QQ;
 				INFOPLIST_FILE = smarta/Info.plist;
@@ -321,7 +319,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = glaslabs.smarta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.glaslabs.Smarta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

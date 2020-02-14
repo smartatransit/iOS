@@ -21,6 +21,7 @@ class StationLinesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.addSubview(tableViewRefreshControl)
+        self.view.addSubview(loadingIndicator)
 //        tableViewRefreshControl.addTarget(self, action: <#T##Selector#>, for: .valueChanged)
         loadingIndicator.center = view.center
         
@@ -30,6 +31,8 @@ class StationLinesTableViewController: UITableViewController {
                 let stations = try result.get()
                 DispatchQueue.main.async {
                     self.loadingIndicator.startAnimating()
+                    self.view.addSubview(self.loadingIndicator)
+                    self.loadingIndicator.hidesWhenStopped = true
                     self.stations = stations
                     print(self.stations)
                     self.tableView.reloadData()
@@ -96,6 +99,8 @@ class StationLinesTableViewController: UITableViewController {
                 let stations = try result.get()
                 DispatchQueue.main.async {
                     self.loadingIndicator.startAnimating()
+                    self.view.addSubview(self.loadingIndicator)
+                    self.loadingIndicator.hidesWhenStopped = true
                     self.stations = stations
                     print(self.stations)
                     self.tableView.reloadData()
