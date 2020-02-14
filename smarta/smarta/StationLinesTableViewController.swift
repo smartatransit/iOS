@@ -36,7 +36,6 @@ class StationLinesTableViewController: UITableViewController, UISearchBarDelegat
                     self.loadingIndicator.hidesWhenStopped = true
                     self.stations = stations
                     self.displayedStations = stations
-                    print(self.stations)
                     self.tableView.reloadData()
                     self.loadingIndicator.stopAnimating()
                 }

@@ -15,9 +15,7 @@ class NetworkController {
     var station: [Station] = []
     
     func fetchStationLines(with line: String, completion: @escaping (Result<[Station], Error>) -> Void) {
-        
-        debugPrint("Fetching station lines.")
-        
+                
         let lineURL = baseURL.appendingPathComponent(line)
         let request = URLRequest(url: lineURL)
         
@@ -35,8 +33,10 @@ class NetworkController {
             do {
                 self.station =  try JSONDecoder().decode(Stations.self, from: data)
                 completion(.success(self.station))
+                debugPrint("JSON successfully decoded: \(self.station)")
             } catch {
                 completion(.failure(error))
+                debugPrint("Error decoding JSON: \(error) ")
                 return
             }
         }.resume()
