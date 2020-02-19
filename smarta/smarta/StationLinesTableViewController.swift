@@ -60,6 +60,7 @@ class StationLinesTableViewController: UITableViewController, UISearchBarDelegat
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StationTableViewCell.reuseIdentifier, for: indexPath) as? StationTableViewCell else { return UITableViewCell() }
         let station = displayedStations[indexPath.row]
+        cell.selectionStyle = .none
         cell.stationNameLabel.text = station.station.name
         cell.arrivalTimeLabel.text = "Arrival time: \(station.schedule.nextArrival)"
         cell.directionLabel.text = "Direction: \(station.station.direction.rawValue)"
