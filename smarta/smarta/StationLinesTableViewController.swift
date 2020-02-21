@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
-class StationLinesTableViewController: UITableViewController, UISearchBarDelegate {
+class StationLinesTableViewController: UITableViewController, UISearchBarDelegate, CLLocationManagerDelegate {
     
     let networkController = NetworkController()
+    let locationManager = CLLocationManager()
     
     var stations: [Station]  = []
     var displayedStations: [Station]  = []
@@ -21,6 +24,7 @@ class StationLinesTableViewController: UITableViewController, UISearchBarDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateLocationManager()
         tableView.addSubview(tableViewRefreshControl)
         self.view.addSubview(loadingIndicator)
 //        tableViewRefreshControl.addTarget(self, action: <#T##Selector#>, for: .valueChanged)
@@ -84,7 +88,7 @@ class StationLinesTableViewController: UITableViewController, UISearchBarDelegat
         
         switch trainLine {
         case 0:
-            trainLineString =  Line.red.rawValue
+            trainLineString = Line.red.rawValue
         case 1:
             trainLineString = Line.blue.rawValue
         case 2:
@@ -108,7 +112,7 @@ class StationLinesTableViewController: UITableViewController, UISearchBarDelegat
                     print(self.stations)
                     self.tableView.reloadData()
                     self.loadingIndicator.stopAnimating()
-
+                    
                 }
             } catch {
                 print(error)
@@ -133,6 +137,19 @@ class StationLinesTableViewController: UITableViewController, UISearchBarDelegat
     
     @objc private func refreshStationLines() {
        
+    }
+    
+    func updateLocationManager() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locationValue = manager.location?.coordinate else { return }
+        print("Coordinates: \(locationValue.latitude)  \(locationValue.longitude)")
     }
 
     /*
