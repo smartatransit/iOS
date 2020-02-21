@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -44,45 +43,85 @@
             </objects>
             <point key="canvasLocation" x="675" y="-702"/>
         </scene>
-        <!--Item-->
+        <!--Nearest Stations-->
         <scene sceneID="inE-py-MfN">
             <objects>
                 <navigationController id="Bmk-ry-rpW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="e9j-HW-gSW"/>
+                    <tabBarItem key="tabBarItem" title="Nearest Stations" id="e9j-HW-gSW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vbS-DO-3yT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="EnP-EU-U6e" kind="relationship" relationship="rootViewController" id="qNl-Pe-Wy4"/>
+                        <segue destination="SlE-1r-AWB" kind="relationship" relationship="rootViewController" id="Yb2-8L-Elk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IL5-e7-zCm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="699" y="150"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="UJn-GU-LrF">
+        <!--Nearest Stations Table View Controller-->
+        <scene sceneID="jc8-wp-sUW">
             <objects>
-                <viewController id="EnP-EU-U6e" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Rla-t4-Jzo">
+                <tableViewController id="SlE-1r-AWB" customClass="NearestStationsTableViewController" customModule="smarta" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aMy-2T-ssH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uM2-Op-HNb">
-                                <rect key="frame" x="20" y="121" width="139" height="202"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="iaR-u8-LFa"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ftT-Ng-xXc"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V0W-hg-gW7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="126" id="WNe-Gv-5la" customClass="NearestStationsTableViewCell" customModule="smarta" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="126"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WNe-Gv-5la" id="4nA-xE-Q0y">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="126"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" id="shx-Fc-ZHU">
+                                            <rect key="frame" x="0.0" y="10" width="414" height="105"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.78243281119999997" green="0.85446567080000002" blue="0.92616580309999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kQo-V5-qJm">
+                                            <rect key="frame" x="8" y="19" width="398" height="89"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vXy-mk-fYj">
+                                                    <rect key="frame" x="161" y="0.0" width="76.5" height="60.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTv-Ln-iJF">
+                                                    <rect key="frame" x="178" y="68.5" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="kQo-V5-qJm" firstAttribute="top" secondItem="4nA-xE-Q0y" secondAttribute="top" constant="19" id="Q6q-aL-aa8"/>
+                                        <constraint firstAttribute="bottom" secondItem="kQo-V5-qJm" secondAttribute="bottom" constant="18" id="Uh4-0g-2Wp"/>
+                                        <constraint firstAttribute="trailing" secondItem="kQo-V5-qJm" secondAttribute="trailing" constant="8" id="n3A-MX-Zcq"/>
+                                        <constraint firstItem="kQo-V5-qJm" firstAttribute="leading" secondItem="4nA-xE-Q0y" secondAttribute="leading" constant="8" id="uvb-YI-1PE"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="distanceLabel" destination="rTv-Ln-iJF" id="Etj-AF-xbq"/>
+                                    <outlet property="stationNameLabel" destination="vXy-mk-fYj" id="dbf-77-82k"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SlE-1r-AWB" id="X0V-Dd-Anp"/>
+                            <outlet property="delegate" destination="SlE-1r-AWB" id="2lw-lM-uz7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Hhz-s0-ccW"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="prF-bi-avo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1605.7971014492755" y="150"/>
+            <point key="canvasLocation" x="1469.5652173913045" y="150"/>
         </scene>
         <!--smarta-->
         <scene sceneID="gDn-T1-ZPg">

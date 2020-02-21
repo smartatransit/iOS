@@ -35,7 +35,7 @@ class NetworkController {
             }
 
             do {
-                self.station =  try JSONDecoder().decode(Stations.self, from: data)
+                self.station = try JSONDecoder().decode(Stations.self, from: data)
                 completion(.success(self.station))
                 debugPrint("JSON successfully decoded: \(self.station)")
             } catch {
