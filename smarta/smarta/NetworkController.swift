@@ -16,7 +16,7 @@ class NetworkController {
     
     var station: [Station] = []
     
-    var nearestStation: [StationByLocation] = []
+    var nearestStation: StationByLocation?
     
     func fetchStationLines(with line: String, completion: @escaping (Result<[Station], Error>) -> Void) {
                 
@@ -46,7 +46,7 @@ class NetworkController {
         }.resume()
     }
     
-    func fetchClosestStations(with latitude: Double, and longitude: Double, completion: @escaping (Result<[StationByLocation], Error>) -> Void) {
+    func fetchClosestStations(with latitude: Double, and longitude: Double, completion: @escaping (Result<StationByLocation, Error>) -> Void) {
     
         var urlComponents = URLComponents(url: locationBaseURL, resolvingAgainstBaseURL: false)
         
@@ -70,9 +70,9 @@ class NetworkController {
              }
 
              do {
-                 self.nearestStation =  try JSONDecoder().decode([StationByLocation].self, from: data)
-                 completion(.success(self.nearestStation))
-                 debugPrint("JSON successfully decoded: \(self.nearestStation)")
+                 self.nearestStation =  try JSONDecoder().decode(StationByLocation.self, from: data)
+                completion(.success(self.nearestStation!))
+                 debugPrint("ABC JSON successfully decoded: \(self.nearestStation)")
              } catch {
                  completion(.failure(error))
                  debugPrint("Error decoding JSON: \(error) ")
