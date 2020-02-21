@@ -15,7 +15,6 @@ class NearestStationsTableViewController: UITableViewController, CLLocationManag
     let networkController = NetworkController()
     let locationManager = CLLocationManager()
     
-//    var nearestStations: [NearestStation] = []
     var stationByLocation: StationByLocation?
 
     override func viewDidLoad() {
@@ -29,16 +28,19 @@ class NearestStationsTableViewController: UITableViewController, CLLocationManag
         return stationByLocation?.stations.count ?? 0
     }
     
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: NearestStationsTableViewCell.reuseIdentifier, for: indexPath) as? NearestStationsTableViewCell else { return UITableViewCell() }
-        let station = stationByLocation?.stations[indexPath.row]
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NearestStationsTableViewCell.reuseIdentifier, for: indexPath) as? NearestStationsTableViewCell else { return UITableViewCell() }
+        //        guard let stationByLocation = self.stationByLocation else { return nil }
+        //
+        if let stationByLocation = self.stationByLocation {
+            let station = stationByLocation.stations[indexPath.row]
             cell.selectionStyle = .none
-        cell.stationNameLabel.text = " \(station?.stationName)"
-        cell.distanceLabel.text = "Distance: \(station?.distance)"
-
+            cell.stationNameLabel.text = " \(station.stationName)"
+            cell.distanceLabel.text = "Distance: \(station.distance)"
             
-            return cell
         }
+        return cell
+    }
 
     func updateLocationManager() {
         if CLLocationManager.locationServicesEnabled() {
