@@ -30,14 +30,13 @@ class NearestStationsTableViewController: UITableViewController, CLLocationManag
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NearestStationsTableViewCell.reuseIdentifier, for: indexPath) as? NearestStationsTableViewCell else { return UITableViewCell() }
-        //        guard let stationByLocation = self.stationByLocation else { return nil }
-        //
+        
         if let stationByLocation = self.stationByLocation {
             let station = stationByLocation.stations[indexPath.row]
             cell.selectionStyle = .none
             cell.stationNameLabel.text = " \(station.stationName)"
             cell.distanceLabel.text = "\(station.distance) Miles"
-            
+            cell.containerView.layer.cornerRadius = 12
         }
         return cell
     }

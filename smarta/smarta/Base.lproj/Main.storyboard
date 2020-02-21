@@ -16,8 +16,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="RyW-kP-FFy" kind="relationship" relationship="viewControllers" id="aIX-SX-p70"/>
                         <segue destination="Bmk-ry-rpW" kind="relationship" relationship="viewControllers" id="jpb-Cg-MNK"/>
+                        <segue destination="RyW-kP-FFy" kind="relationship" relationship="viewControllers" id="aIX-SX-p70"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyw-Qw-XzY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -77,21 +77,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" id="shx-Fc-ZHU">
-                                            <rect key="frame" x="0.0" y="10" width="414" height="105"/>
+                                            <rect key="frame" x="8" y="10" width="397" height="105"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.78243281119999997" green="0.85446567080000002" blue="0.92616580309999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kQo-V5-qJm">
-                                            <rect key="frame" x="8" y="19" width="398" height="89"/>
+                                            <rect key="frame" x="8" y="19" width="388" height="89"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vXy-mk-fYj">
-                                                    <rect key="frame" x="161" y="0.0" width="76.5" height="60.5"/>
+                                                    <rect key="frame" x="156" y="0.0" width="76.5" height="60.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTv-Ln-iJF">
-                                                    <rect key="frame" x="178" y="68.5" width="42" height="20.5"/>
+                                                    <rect key="frame" x="173" y="68.5" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -100,13 +100,14 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="kQo-V5-qJm" secondAttribute="trailing" constant="18" id="KW9-9c-9Ee"/>
                                         <constraint firstItem="kQo-V5-qJm" firstAttribute="top" secondItem="4nA-xE-Q0y" secondAttribute="top" constant="19" id="Q6q-aL-aa8"/>
                                         <constraint firstAttribute="bottom" secondItem="kQo-V5-qJm" secondAttribute="bottom" constant="18" id="Uh4-0g-2Wp"/>
-                                        <constraint firstAttribute="trailing" secondItem="kQo-V5-qJm" secondAttribute="trailing" constant="8" id="n3A-MX-Zcq"/>
                                         <constraint firstItem="kQo-V5-qJm" firstAttribute="leading" secondItem="4nA-xE-Q0y" secondAttribute="leading" constant="8" id="uvb-YI-1PE"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="containerView" destination="kQo-V5-qJm" id="ZOd-jR-wBt"/>
                                     <outlet property="distanceLabel" destination="rTv-Ln-iJF" id="Etj-AF-xbq"/>
                                     <outlet property="stationNameLabel" destination="vXy-mk-fYj" id="dbf-77-82k"/>
                                 </connections>

@@ -12,6 +12,8 @@ class NearestStationsTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "cell"
 
+    @IBOutlet weak var containerView: UIStackView!
+    
     @IBOutlet weak var stationNameLabel: UILabel!
     
     @IBOutlet weak var distanceLabel: UILabel!
