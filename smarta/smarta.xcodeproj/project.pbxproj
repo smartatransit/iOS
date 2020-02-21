@@ -17,6 +17,7 @@
 		95E7BCA723EBD408009451D5 /* StationLinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7BCA623EBD408009451D5 /* StationLinesTableViewController.swift */; };
 		95E7BCA923ED1138009451D5 /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7BCA823ED1138009451D5 /* StationTableViewCell.swift */; };
 		B97FEF6323FF768100809215 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FEF6223FF768100809215 /* Location.swift */; };
+		B97FEF6523FF84B900809215 /* NearestStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FEF6423FF84B900809215 /* NearestStation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		95E7BCA623EBD408009451D5 /* StationLinesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationLinesTableViewController.swift; sourceTree = "<group>"; };
 		95E7BCA823ED1138009451D5 /* StationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
 		B97FEF6223FF768100809215 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		B97FEF6423FF84B900809215 /* NearestStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestStation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				95E7BCA823ED1138009451D5 /* StationTableViewCell.swift */,
 				95E7BCA623EBD408009451D5 /* StationLinesTableViewController.swift */,
 				9586CE9323EA54E200DADD82 /* Station.swift */,
+				B97FEF6423FF84B900809215 /* NearestStation.swift */,
 				9586CE6423E511CB00DADD82 /* Assets.xcassets */,
 				9586CE6623E511CB00DADD82 /* LaunchScreen.storyboard */,
 				9586CE6923E511CB00DADD82 /* Info.plist */,
@@ -153,6 +156,7 @@
 				9586CE9023EA4CB300DADD82 /* NetworkController.swift in Sources */,
 				9586CE5C23E511C900DADD82 /* AppDelegate.swift in Sources */,
 				95E7BCA923ED1138009451D5 /* StationTableViewCell.swift in Sources */,
+				B97FEF6523FF84B900809215 /* NearestStation.swift in Sources */,
 				9586CE9423EA54E200DADD82 /* Station.swift in Sources */,
 				9586CE5E23E511C900DADD82 /* SceneDelegate.swift in Sources */,
 				95E7BCA723EBD408009451D5 /* StationLinesTableViewController.swift in Sources */,
