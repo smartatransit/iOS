@@ -36,7 +36,7 @@ class NearestStationsTableViewController: UITableViewController, CLLocationManag
             let station = stationByLocation.stations[indexPath.row]
             cell.selectionStyle = .none
             cell.stationNameLabel.text = " \(station.stationName)"
-            cell.distanceLabel.text = "Distance: \(station.distance)"
+            cell.distanceLabel.text = "\(station.distance) Miles"
             
         }
         return cell
