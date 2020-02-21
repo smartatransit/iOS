@@ -142,7 +142,7 @@ class StationLinesTableViewController: UITableViewController, UISearchBarDelegat
     func updateLocationManager() {
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
         }
     }

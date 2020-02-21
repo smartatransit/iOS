@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import CoreLocation
 
-let baseURL = URL(string: "https://staging.api.smartatransit.com/api/live/schedule/line/")!
+let lineBaseURL = URL(string: "https://staging.api.smartatransit.com/api/live/schedule/line/")!
+let locationBaseURL = URL(string: "http://staging.api.smartatransit.com/api/static/stations/location")!
 
 class NetworkController {
     
@@ -16,7 +18,7 @@ class NetworkController {
     
     func fetchStationLines(with line: String, completion: @escaping (Result<[Station], Error>) -> Void) {
                 
-        let lineURL = baseURL.appendingPathComponent(line)
+        let lineURL = lineBaseURL.appendingPathComponent(line)
         let request = URLRequest(url: lineURL)
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
@@ -40,5 +42,9 @@ class NetworkController {
                 return
             }
         }.resume()
+    }
+    
+    func fetchClosestStations(with latitude: Double, and location: Double, completion: @escaping (Result<[Station], Error>) -> Void) {
+        <#function body#>
     }
 }
