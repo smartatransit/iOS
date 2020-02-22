@@ -33,6 +33,7 @@ class NearestStationsTableViewController: UITableViewController, CLLocationManag
         }
     }
 
+
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,6 +53,12 @@ class NearestStationsTableViewController: UITableViewController, CLLocationManag
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let stationName = stationByLocation?.stations[indexPath.row].stationName
+        navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
+    }
+    
+
     func shortenNumber(with digits: Double) -> String? {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .none

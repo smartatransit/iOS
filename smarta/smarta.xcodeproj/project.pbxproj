@@ -19,6 +19,7 @@
 		B97FEF6523FF84B900809215 /* NearestStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FEF6423FF84B900809215 /* NearestStation.swift */; };
 		B97FEF6723FF974100809215 /* NearestStationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FEF6623FF974100809215 /* NearestStationsTableViewController.swift */; };
 		B97FEF6923FF977900809215 /* NearestStationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FEF6823FF977900809215 /* NearestStationsTableViewCell.swift */; };
+		B97FEF742401BA7000809215 /* StationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97FEF732401BA7000809215 /* StationTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B97FEF6423FF84B900809215 /* NearestStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestStation.swift; sourceTree = "<group>"; };
 		B97FEF6623FF974100809215 /* NearestStationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestStationsTableViewController.swift; sourceTree = "<group>"; };
 		B97FEF6823FF977900809215 /* NearestStationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestStationsTableViewCell.swift; sourceTree = "<group>"; };
+		B97FEF732401BA7000809215 /* StationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +74,7 @@
 				B97FEF6E2401B43D00809215 /* Resources */,
 				B97FEF6F2401B45B00809215 /* Storyboards */,
 				B97FEF6A2401B39500809215 /* Table View Cells */,
-				B97FEF6B2401B3A800809215 /* Table View Controller */,
+				B97FEF6B2401B3A800809215 /* Table View Controllers */,
 				B97FEF6C2401B3C400809215 /* Models */,
 				B97FEF6D2401B3D100809215 /* Helpers */,
 			);
@@ -88,13 +90,14 @@
 			path = "Table View Cells";
 			sourceTree = "<group>";
 		};
-		B97FEF6B2401B3A800809215 /* Table View Controller */ = {
+		B97FEF6B2401B3A800809215 /* Table View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				95E7BCA623EBD408009451D5 /* StationLinesTableViewController.swift */,
 				B97FEF6623FF974100809215 /* NearestStationsTableViewController.swift */,
+				B97FEF732401BA7000809215 /* StationTableViewController.swift */,
 			);
-			path = "Table View Controller";
+			path = "Table View Controllers";
 			sourceTree = "<group>";
 		};
 		B97FEF6C2401B3C400809215 /* Models */ = {
@@ -215,6 +218,7 @@
 				9586CE9023EA4CB300DADD82 /* NetworkController.swift in Sources */,
 				B97FEF6923FF977900809215 /* NearestStationsTableViewCell.swift in Sources */,
 				9586CE5C23E511C900DADD82 /* AppDelegate.swift in Sources */,
+				B97FEF742401BA7000809215 /* StationTableViewController.swift in Sources */,
 				95E7BCA923ED1138009451D5 /* StationTableViewCell.swift in Sources */,
 				B97FEF6523FF84B900809215 /* NearestStation.swift in Sources */,
 				9586CE9423EA54E200DADD82 /* Station.swift in Sources */,
