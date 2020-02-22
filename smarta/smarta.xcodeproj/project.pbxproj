@@ -68,21 +68,69 @@
 		9586CE5A23E511C900DADD82 /* smarta */ = {
 			isa = PBXGroup;
 			children = (
-				9586CE5B23E511C900DADD82 /* AppDelegate.swift */,
-				9586CE8F23EA4CB300DADD82 /* NetworkController.swift */,
-				9586CE5D23E511C900DADD82 /* SceneDelegate.swift */,
-				9586CE6123E511C900DADD82 /* Main.storyboard */,
-				95E7BCA823ED1138009451D5 /* StationTableViewCell.swift */,
-				B97FEF6823FF977900809215 /* NearestStationsTableViewCell.swift */,
-				95E7BCA623EBD408009451D5 /* StationLinesTableViewController.swift */,
-				B97FEF6623FF974100809215 /* NearestStationsTableViewController.swift */,
-				9586CE9323EA54E200DADD82 /* Station.swift */,
-				B97FEF6423FF84B900809215 /* NearestStation.swift */,
-				9586CE6423E511CB00DADD82 /* Assets.xcassets */,
-				9586CE6623E511CB00DADD82 /* LaunchScreen.storyboard */,
-				9586CE6923E511CB00DADD82 /* Info.plist */,
+				B97FEF6E2401B43D00809215 /* Resources */,
+				B97FEF6F2401B45B00809215 /* Storyboards */,
+				B97FEF6A2401B39500809215 /* Table View Cells */,
+				B97FEF6B2401B3A800809215 /* Table View Controller */,
+				B97FEF6C2401B3C400809215 /* Models */,
+				B97FEF6D2401B3D100809215 /* Helpers */,
 			);
 			path = smarta;
+			sourceTree = "<group>";
+		};
+		B97FEF6A2401B39500809215 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				95E7BCA823ED1138009451D5 /* StationTableViewCell.swift */,
+				B97FEF6823FF977900809215 /* NearestStationsTableViewCell.swift */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		B97FEF6B2401B3A800809215 /* Table View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				95E7BCA623EBD408009451D5 /* StationLinesTableViewController.swift */,
+				B97FEF6623FF974100809215 /* NearestStationsTableViewController.swift */,
+			);
+			path = "Table View Controller";
+			sourceTree = "<group>";
+		};
+		B97FEF6C2401B3C400809215 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9586CE9323EA54E200DADD82 /* Station.swift */,
+				B97FEF6423FF84B900809215 /* NearestStation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B97FEF6D2401B3D100809215 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9586CE8F23EA4CB300DADD82 /* NetworkController.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B97FEF6E2401B43D00809215 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9586CE5B23E511C900DADD82 /* AppDelegate.swift */,
+				9586CE5D23E511C900DADD82 /* SceneDelegate.swift */,
+				9586CE6423E511CB00DADD82 /* Assets.xcassets */,
+				9586CE6923E511CB00DADD82 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B97FEF6F2401B45B00809215 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9586CE6123E511C900DADD82 /* Main.storyboard */,
+				9586CE6623E511CB00DADD82 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
