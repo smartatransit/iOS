@@ -58,7 +58,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IL5-e7-zCm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="699" y="150"/>
+            <point key="canvasLocation" x="465" y="150"/>
         </scene>
         <!--Nearest Stations Table View Controller-->
         <scene sceneID="jc8-wp-sUW">
@@ -76,11 +76,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="126"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" id="shx-Fc-ZHU">
-                                            <rect key="frame" x="8" y="10" width="397" height="105"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.78243281119999997" green="0.85446567080000002" blue="0.92616580309999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kQo-V5-qJm">
                                             <rect key="frame" x="18" y="19" width="378" height="89"/>
                                             <subviews>
@@ -97,6 +92,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.11247964802785038" green="0.89590688831904197" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </stackView>
                                     </subviews>
                                     <constraints>
@@ -122,7 +118,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="prF-bi-avo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1469.5652173913045" y="150"/>
+            <point key="canvasLocation" x="1377" y="150"/>
         </scene>
         <!--smarta-->
         <scene sceneID="gDn-T1-ZPg">

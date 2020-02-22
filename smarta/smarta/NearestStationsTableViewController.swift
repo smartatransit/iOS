@@ -46,10 +46,17 @@ class NearestStationsTableViewController: UITableViewController, CLLocationManag
             let station = stationByLocation.stations[indexPath.row]
             cell.selectionStyle = .none
             cell.stationNameLabel.text = " \(station.stationName)"
-            cell.distanceLabel.text = "\(station.distance) Miles"
+            cell.distanceLabel.text = "\(            shortenNumber(with: station.distance)!) Miles Away"
             cell.containerView.layer.cornerRadius = 12
         }
         return cell
+    }
+    
+    func shortenNumber(with digits: Double) -> String? {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .none
+        let newString = numberFormatter.string(from: NSNumber(value: digits))
+        return newString
     }
 
     func updateLocationManager() {
