@@ -16,10 +16,21 @@ class NearestStationsTableViewController: UITableViewController, CLLocationManag
     let locationManager = CLLocationManager()
     
     var stationByLocation: StationByLocation?
+    var stations: [Station]  = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateLocationManager()
+    
+        networkController.fetchStationInfo(by: "Indian Creek Station") { result in
+                do {
+                    let stations = try result.get()
+                    self.stations = stations
+                    print("THE: \(stations)")
+                } catch {
+                    print(error)
+                }
+        }
     }
 
     // MARK: - Table view data source

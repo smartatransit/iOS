@@ -11,6 +11,7 @@ import CoreLocation
 
 let lineBaseURL = URL(string: "https://staging.api.smartatransit.com/api/live/schedule/line/")!
 let locationBaseURL = URL(string: "https://staging.api.smartatransit.com/api/static/stations/location")!
+let stationNameURL = URL(string: "https://staging.api.smartatransit.com/api/live/schedule/station")!
 
 class NetworkController {
     
@@ -80,5 +81,39 @@ class NetworkController {
              }
          }.resume()
         
+    }
+    
+    func fetchStationInfo(by stationName: String, completion: @escaping (Result<[Station], Error>) -> Void) {
+        
+        var urlComponents = URLComponents(url: stationNameURL, resolvingAgainstBaseURL: false)
+        
+        let queryItem = URLQueryItem(name: "station-name", value: stationName)
+
+        urlComponents?.queryItems = [queryItem]
+        
+        let requestURL = URLRequest(url: (urlComponents?.url)!)
+
+        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(error!))
+                return
+            }
+
+            do {
+                self.station = try JSONDecoder().decode(Stations.self, from: data)
+                completion(.success(self.station))
+                debugPrint("JSON successfully decoded: \(self.station)")
+            } catch {
+                completion(.failure(error))
+                debugPrint("Error decoding JSON: \(error) ")
+                return
+            }
+        }.resume()
+
     }
 }
