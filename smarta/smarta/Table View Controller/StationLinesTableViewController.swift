@@ -12,9 +12,7 @@ import MapKit
 
 class StationLinesTableViewController: UITableViewController, UISearchBarDelegate, CLLocationManagerDelegate {
     
-    let networkController = NetworkController()
-//    let locationManager = CLLocationManager()
-    
+    let networkController = NetworkController()    
     var stations: [Station]  = []
     var displayedStations: [Station]  = []
     private let tableViewRefreshControl = UIRefreshControl()

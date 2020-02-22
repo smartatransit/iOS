@@ -68,6 +68,7 @@
 		9586CE5A23E511C900DADD82 /* smarta */ = {
 			isa = PBXGroup;
 			children = (
+				B97FEF722401B7BE00809215 /* Services */,
 				B97FEF6E2401B43D00809215 /* Resources */,
 				B97FEF6F2401B45B00809215 /* Storyboards */,
 				B97FEF6A2401B39500809215 /* Table View Cells */,
@@ -116,8 +117,6 @@
 		B97FEF6E2401B43D00809215 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9586CE5B23E511C900DADD82 /* AppDelegate.swift */,
-				9586CE5D23E511C900DADD82 /* SceneDelegate.swift */,
 				9586CE6423E511CB00DADD82 /* Assets.xcassets */,
 				9586CE6923E511CB00DADD82 /* Info.plist */,
 			);
@@ -131,6 +130,15 @@
 				9586CE6623E511CB00DADD82 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B97FEF722401B7BE00809215 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9586CE5B23E511C900DADD82 /* AppDelegate.swift */,
+				9586CE5D23E511C900DADD82 /* SceneDelegate.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,7 +365,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VL892F87QQ;
-				INFOPLIST_FILE = smarta/Info.plist;
+				INFOPLIST_FILE = smarta/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,7 +382,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VL892F87QQ;
-				INFOPLIST_FILE = smarta/Info.plist;
+				INFOPLIST_FILE = smarta/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
