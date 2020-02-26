@@ -55,8 +55,9 @@ class NearestStationsTableViewController: UITableViewController, CLLocationManag
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let stationName = stationByLocation?.stations[indexPath.row].stationName
-        let stationTableViewController = StationTableViewController()
-navigationController?.pushViewController(stationTableViewController, animated: true)
+        guard let stationNameString = stationName else { return }
+        let stationTableViewController = StationTableViewController(source: stationNameString)
+        navigationController?.pushViewController(stationTableViewController, animated: true)
     }
     
 

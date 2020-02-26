@@ -8,10 +8,36 @@
 
 import UIKit
 
-class StationTableViewController: UITableViewController {
+class StationTableViewController: UITableViewController, HasStationSource {
+    
+    let networkController = NetworkController()
+    var source: String
+    var stations: [Station] = []
+    
+    init(source: String) {
+        self.source = source
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        networkController.fetchStationInfo(by: source) { (result) in
+            do {
+                let stations = try result.get()
+                self.stations = stations
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                print("XYZ: \(stations)")
+            } catch {
+                print(error)
+            }
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -21,26 +47,26 @@ class StationTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return stations.count
+//    }
+//
+//    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+//
+////        guard let cell = tableView.dequeueReusableCell(withIdentifier: StationDetailTableViewCell.reuseIdentifier, for: indexPath) as? StationDetailTableViewCell else { return UITableViewCell() }
+//        let station = stations[indexPath.row]
+////        cell.waitingTimeLabel.text = station.schedule.waitingTime
+////        cell.arrivalTimeLabel.text = station.schedule.nextArrival
+////        cell.selectionStyle = .none
+////        
+//        cell.textLabel?.text = station.schedule.waitingTime
+//        cell.detailTextLabel?.text = station.schedule.waitingTime
+//        return cell
+//    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -86,5 +112,9 @@ class StationTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func setupLayout() {
+        
+    }
 
 }
