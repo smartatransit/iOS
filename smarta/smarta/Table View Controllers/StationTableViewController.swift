@@ -11,13 +11,9 @@ import UIKit
 class StationTableViewController: UIViewController, HasStationSource, UITableViewDataSource, UITableViewDelegate {
     
     let tableView = UITableView()
-    
-    
     let networkController = NetworkController()
     var source: String
     var stations: [Station] = []
-    
-    
     
     init(source: String) {
         self.source = source
@@ -53,12 +49,10 @@ class StationTableViewController: UIViewController, HasStationSource, UITableVie
     }
 
     // MARK: - Table view data source
-//
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stations.count
     }
-//
-//
+
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 

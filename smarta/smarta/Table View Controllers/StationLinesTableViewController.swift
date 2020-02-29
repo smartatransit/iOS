@@ -61,15 +61,6 @@ class StationLinesTableViewController: UITableViewController, UISearchBarDelegat
         cell.arrivalTimeLabel.text = "Arrival time: \(station.schedule.nextArrival)"
         cell.directionLabel.text = "Direction: \(station.station.direction.rawValue)"
         cell.containerView.layer.cornerRadius = 12
-        //
-        // Configure the cell...
-
-//        if segmentedControl.selectedSegmentIndex == 0 {
-//            cell.containerView.backgroundColor = .red
-//        } else {
-//            cell.containerView.backgroundColor = .cyan
-//        }
-        
         return cell
     }
    
