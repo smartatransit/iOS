@@ -28,7 +28,7 @@ class StationTableViewController: UIViewController, HasStationSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(StationDetailTableViewCell.self, forCellReuseIdentifier: StationDetailTableViewCell.reuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -54,12 +54,12 @@ class StationTableViewController: UIViewController, HasStationSource, UITableVie
     }
 
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: StationDetailTableViewCell.reuseIdentifier, for: indexPath) as! StationDetailTableViewCell
 
 //        guard let cell = tableView.dequeueReusableCell(withIdentifier: StationDetailTableViewCell.reuseIdentifier, for: indexPath) as? StationDetailTableViewCell else { return UITableViewCell() }
         let station = stations[indexPath.row]
-        cell.textLabel?.text = station.schedule.waitingTime
-        cell.detailTextLabel?.text = station.schedule.nextArrival
+        cell.waitingTimeLabel.text = station.schedule.waitingTime
+        cell.arrivalTimeLabel.text = station.schedule.nextArrival
         return cell
     }
     
