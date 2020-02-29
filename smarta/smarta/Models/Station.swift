@@ -36,10 +36,11 @@ struct Schedule: Codable {
     }
 }
 
-//enum Destination: String, Codable {
-//    case airportStation = "Airport Station"
-//    case northSpringsStation = "North Springs Station"
-//}
+enum Destination: String, Codable {
+    case airportStation = "Airport Station"
+    case avondaleStation = "Avondale Station"
+    case northSpringsStation = "North Springs Station"
+}
 
 // MARK: - StationClass
 struct StationClass: Codable {
