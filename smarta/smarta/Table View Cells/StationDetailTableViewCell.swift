@@ -28,6 +28,7 @@ class StationDetailTableViewCell: UITableViewCell {
         stackView.addArrangedSubview(arrivalTimeLabel)
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
+//        stackView.alignment = .center
         return stackView
     }()
 
@@ -45,6 +46,10 @@ class StationDetailTableViewCell: UITableViewCell {
     
     func setUpViews() {
         contentView.addSubview(containerStackView)
+        containerStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
+        containerStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8).isActive = true
+        containerStackView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 16).isActive = true
+               
         
     }
     

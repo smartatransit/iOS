@@ -31,6 +31,7 @@ class StationTableViewController: UIViewController, HasStationSource, UITableVie
         tableView.register(StationDetailTableViewCell.self, forCellReuseIdentifier: StationDetailTableViewCell.reuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+//        tableView.estimatedRowHeight = 44
         
         setupLayout()
         view.backgroundColor = .white
